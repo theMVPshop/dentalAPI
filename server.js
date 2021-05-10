@@ -7,7 +7,8 @@ const app = express();
 //Initialize middleware, used to be bodyparser
 app.use(express.json());
 
-app.get('/', (req, res) => res.send('server is working'));
+app.get('/', (req, res) => res.send('api server is working'));
+app.use('/offices', require('./routes/offices'));
 
 const PORT = process.env.PORT || 5000;
 
