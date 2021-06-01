@@ -23,6 +23,21 @@ const allByCity = (req, res) => {
   });
 };
 
+//@TYPE GET
+//@DESC gets records by city AND state
+const allByCityState = (req, res) => {
+  let sql = `SELECT * FROM heroku_dfd78b6b7e89374.offices WHERE city = ? AND state = ?`;
+  sql = mysql.format(sql, [req.params.city, req.params.state]);
+
+  pool.query(sql, (err, rows) => {
+    if (err) return handleSQLError(res, err);
+    if (rows.length == 0) {
+      return res.json('msg: no records found');
+    }
+    return res.json(rows);
+  });
+};
+
 //@TYPE GET route
 //@DES gets all records by state
 const allByState = (req, res) => {
@@ -47,4 +62,10 @@ const allByZip = (req, res) => {
   });
 };
 
-module.exports = { getAllRecords, allByState, allByZip, allByCity };
+module.exports = {
+  getAllRecords,
+  allByState,
+  allByZip,
+  allByCity,
+  allByCityState,
+};
