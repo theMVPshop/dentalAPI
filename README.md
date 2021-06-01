@@ -3,10 +3,11 @@ Welcome to dentalAPI - An open API for local dental offices
 This API provides contact information for US dental offices. Still in progress.
 
 url: https://dental-werk.herokuapp.com
-https://dental-werk.herokuapp.com/offices/all
-https://dental-werk.herokuapp.com/offices/state/<st>
-https://dental-werk.herokuapp.com/offices/city/<city>
-https://dental-werk.herokuapp.com/offices/zip/<zip>
+ALL RECORDS: https://dental-werk.herokuapp.com/offices/all
+BY STATE: https://dental-werk.herokuapp.com/offices/state/<ST>
+BY CITY: https://dental-werk.herokuapp.com/offices/city/<city>
+BY ZIP CODE: https://dental-werk.herokuapp.com/offices/zip/<zip>
+BY CITY AND STATE: https://dental-werk.herokuapp.com/offices/city/<city>/state/<ST>
 
 data = {
 indx: 205
