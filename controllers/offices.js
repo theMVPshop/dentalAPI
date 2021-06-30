@@ -53,7 +53,7 @@ const allByState = (req, res) => {
 //@TYPE GET route
 //@DESC gets all records by zip
 const allByZip = (req, res) => {
-  let sql = `SELECT * FROM offices WHERE zip = ? `;
+  let sql = `SELECT * FROM offices WHERE zip LIKE ?% `;
   sql = mysql.format(sql, [req.params.zip]);
 
   pool.query(sql, (err, rows) => {
