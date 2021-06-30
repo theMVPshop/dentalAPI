@@ -1,8 +1,11 @@
 require('dotenv').config();
 const db = require('./SQL/connection');
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 //Initialize middleware, used to be bodyparser
 app.use(express.json());
